@@ -1,0 +1,58 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+  <defs>
+    <radialGradient id="g1" cx="72%" cy="22%" r="50%">
+      <stop offset="0" stop-color="#d7ff6f" stop-opacity="0.20"/>
+      <stop offset="1" stop-color="#030303" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="g2" cx="30%" cy="70%" r="55%">
+      <stop offset="0" stop-color="#9fc8ff" stop-opacity="0.16"/>
+      <stop offset="1" stop-color="#030303" stop-opacity="0"/>
+    </radialGradient>
+    <pattern id="grid" width="48" height="48" patternUnits="userSpaceOnUse">
+      <path d="M48 0H0V48" fill="none" stroke="#f7f5ef" stroke-opacity="0.055" stroke-width="1"/>
+    </pattern>
+    <filter id="softGlow" x="-80%" y="-80%" width="260%" height="260%">
+      <feGaussianBlur stdDeviation="5" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+  <rect width="1200" height="630" fill="#030303"/>
+  <rect width="1200" height="630" fill="url(#g1)"/>
+  <rect width="1200" height="630" fill="url(#g2)"/>
+  <rect width="1200" height="630" fill="url(#grid)"/>
+
+  <g opacity="0.62" stroke="#9a9a9a" stroke-width="1">
+    <path d="M760 182L844 126L965 170L908 265L786 283Z"/>
+    <path d="M786 283L898 363L1022 330L1080 220L965 170"/>
+    <path d="M844 126L898 363L760 182"/>
+    <path d="M690 374L786 283L898 363L830 480L708 462Z"/>
+    <path d="M830 480L1022 330L1080 220"/>
+  </g>
+  <g filter="url(#softGlow)">
+    <circle cx="760" cy="182" r="5" fill="#d7ff6f"/>
+    <circle cx="844" cy="126" r="3" fill="#9fc8ff"/>
+    <circle cx="965" cy="170" r="6" fill="#ff7777"/>
+    <circle cx="908" cy="265" r="3" fill="#f7f5ef"/>
+    <circle cx="786" cy="283" r="4" fill="#d7ff6f"/>
+    <circle cx="898" cy="363" r="7" fill="#f7f5ef"/>
+    <circle cx="1022" cy="330" r="3" fill="#9fc8ff"/>
+    <circle cx="1080" cy="220" r="4" fill="#d7ff6f"/>
+    <circle cx="690" cy="374" r="3" fill="#ff7777"/>
+    <circle cx="830" cy="480" r="5" fill="#9fc8ff"/>
+    <circle cx="708" cy="462" r="3" fill="#d7ff6f"/>
+  </g>
+  <g opacity="0.9">
+    <circle cx="710" cy="120" r="2" fill="#f7f5ef"/><circle cx="735" cy="105" r="1.7" fill="#d7ff6f"/><circle cx="790" cy="92" r="2" fill="#9fc8ff"/><circle cx="1020" cy="110" r="1.8" fill="#f7f5ef"/><circle cx="1100" cy="390" r="2" fill="#d7ff6f"/><circle cx="990" cy="500" r="1.9" fill="#f7f5ef"/><circle cx="620" cy="430" r="2" fill="#9fc8ff"/><circle cx="650" cy="250" r="1.7" fill="#ff7777"/>
+  </g>
+
+  <g transform="translate(76 74)">
+    <rect width="86" height="86" rx="24" fill="#f7f5ef"/>
+    <text x="43" y="59" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="40" font-weight="800" fill="#030303" letter-spacing="-4">LR</text>
+  </g>
+
+  <text x="76" y="220" font-family="Inter, Arial, sans-serif" font-size="74" font-weight="900" fill="#f7f5ef" letter-spacing="-5">Luanda Rodrigues</text>
+  <text x="78" y="276" font-family="Inter, Arial, sans-serif" font-size="33" font-weight="600" fill="#b8b5ad">Data Analyst · Health · BI · Decision Intelligence</text>
+  <text x="78" y="366" font-family="Inter, Arial, sans-serif" font-size="54" font-weight="900" fill="#f7f5ef" letter-spacing="-3">Turning complex systems</text>
+  <text x="78" y="426" font-family="Inter, Arial, sans-serif" font-size="54" font-weight="900" fill="#f7f5ef" letter-spacing="-3">into readable data.</text>
+  <text x="80" y="506" font-family="IBM Plex Mono, monospace" font-size="20" font-weight="700" fill="#d7ff6f" letter-spacing="2">PYTHON / SQL / POWER BI / ML / GRAPH ANALYTICS</text>
+</svg>
