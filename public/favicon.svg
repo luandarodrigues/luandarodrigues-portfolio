@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="96" height="96" viewBox="0 0 96 96">
+  <rect width="96" height="96" rx="26" fill="#f7f5ef"/>
+  <text x="48" y="62" text-anchor="middle" font-family="Arial, sans-serif" font-size="44" font-weight="800" fill="#030303" letter-spacing="-5">LR</text>
+  <path d="M62 70 L78 65 L70 78 Z" fill="#d7ff6f"/>
+</svg>
