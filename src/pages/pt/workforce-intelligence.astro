@@ -49,22 +49,22 @@ const pageTitle = "Workforce Intelligence | Luanda Rodrigues";
     .topnav a,.eyebrow,.meta-chip,summary,.reset-btn,.filter-option label{font-family:'IBM Plex Mono',monospace}
     .topnav a{font-size:12px;text-transform:uppercase;letter-spacing:.1em;color:var(--soft);font-weight:800;white-space:nowrap}
     .lang{border:1px solid var(--line);padding:8px 10px;border-radius:999px}
-    .hero-case{padding:66px 0 26px}
+    .hero-case{padding:42px 0 18px}
     .eyebrow{text-transform:uppercase;letter-spacing:.16em;font-size:12px;color:var(--acid);font-weight:800}
-    .hero-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:18px;align-items:end}
-    .hero-case h1{font-size:clamp(50px,7vw,96px);line-height:.86;letter-spacing:-.08em;margin:16px 0 20px;max-width:980px}
-    .hero-case p{font-size:19px;line-height:1.42;color:#ddd7cc;margin:0}
-    .hero-question{font-size:24px;line-height:1.16;letter-spacing:-.04em;color:#f0ece3;margin-top:18px;max-width:760px}
+    .hero-grid{display:grid;grid-template-columns:1.2fr .8fr;gap:14px;align-items:start}
+    .hero-case h1{font-size:clamp(44px,6vw,78px);line-height:.88;letter-spacing:-.08em;margin:12px 0 14px;max-width:880px}
+    .hero-case p{font-size:17px;line-height:1.4;color:#ddd7cc;margin:0}
+    .hero-question{font-size:20px;line-height:1.16;letter-spacing:-.04em;color:#f0ece3;margin-top:14px;max-width:760px}
     .hero-meta{display:flex;flex-wrap:wrap;gap:8px;margin-top:18px}
     .meta-chip{border:1px solid var(--line);border-radius:999px;padding:9px 11px;background:rgba(255,255,255,.03);font-size:10px;color:var(--soft)}
     .summary-card{padding:22px;background:linear-gradient(135deg,rgba(255,255,255,.06),rgba(255,255,255,.02))}
-    .summary-card h2{font-size:18px;letter-spacing:-.04em;margin:10px 0 18px}
-    .mini-stats{display:grid;grid-template-columns:repeat(2,1fr);gap:10px}
+    .summary-card h2{font-size:16px;letter-spacing:-.04em;margin:10px 0 14px}
+    .mini-stats{display:grid;grid-template-columns:repeat(2,1fr);gap:8px}
     .mini-stat{padding:14px;border:1px solid var(--line);border-radius:18px;background:rgba(0,0,0,.18)}
     .mini-stat strong{display:block;font-size:28px;letter-spacing:-.06em}
     .mini-stat span{display:block;margin-top:6px;color:var(--soft);font-size:12px;line-height:1.35}
-    .section{padding:32px 0 0}
-    .filter-wrap{padding:16px}
+    .section{padding:20px 0 0}
+    .filter-wrap{padding:18px}
     .filter-head{display:flex;justify-content:space-between;gap:16px;align-items:flex-start;margin-bottom:14px}
     .filter-head p{margin:8px 0 0;color:var(--soft);font-size:14px;max-width:720px}
     .filters{display:grid;grid-template-columns:repeat(4,minmax(0,1fr)) auto;gap:10px;align-items:start}
@@ -76,25 +76,23 @@ const pageTitle = "Workforce Intelligence | Luanda Rodrigues";
     .filter-option{display:flex;align-items:flex-start;gap:8px;color:#ece7dc;font-size:13px}
     .filter-option input{margin-top:2px}
     .reset-btn{appearance:none;border:1px solid var(--line);border-radius:999px;background:var(--ink);color:var(--bg);padding:12px 15px;font-weight:800;cursor:pointer}
-    .kpi-band{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:10px;margin-top:16px}
-    .kpi-card{padding:18px;min-height:112px;display:grid;align-content:space-between}
-    .kpi-value{font-size:34px;letter-spacing:-.07em;font-weight:800}
+    .kpi-band{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:10px;margin-top:14px}
+    .kpi-card{padding:16px;min-height:104px;display:grid;align-content:space-between;background:linear-gradient(180deg,rgba(255,255,255,.08),rgba(255,255,255,.03))}
+    .kpi-value{font-size:36px;letter-spacing:-.07em;font-weight:800}
     .kpi-label{font-size:10px;color:var(--soft)}
-    .dashboard-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;margin-top:18px}
-    .panel-card{padding:18px;background:linear-gradient(135deg,rgba(255,255,255,.06),rgba(255,255,255,.02))}
+    .dashboard-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px;margin-top:16px}
+    .panel-card{padding:20px;background:linear-gradient(135deg,rgba(255,255,255,.08),rgba(255,255,255,.025));min-height:320px}
     .panel-head{display:flex;justify-content:space-between;gap:12px;align-items:flex-start;margin-bottom:16px}
-    .panel-head h3{margin:0;font-size:22px;line-height:1;letter-spacing:-.05em}
+    .panel-head h3{margin:0;font-size:24px;line-height:1;letter-spacing:-.05em}
     .panel-note{font-size:9px;color:var(--acid)}
-    .panel-copy{margin:0 0 14px;color:var(--soft);font-size:14px;line-height:1.45}
-    .bars{display:grid;gap:12px}
-    .bar-row{display:grid;grid-template-columns:minmax(96px,180px) 1fr auto;gap:10px;align-items:center}
-    .bar-row span{font-size:13px;color:#ece7dc}
-    .bar-track{position:relative;height:12px;border-radius:999px;background:rgba(255,255,255,.08);overflow:hidden}
-    .bar-fill{position:absolute;inset:0 auto 0 0;border-radius:999px;background:linear-gradient(90deg,var(--teal),var(--blue))}
-    .bar-fill.high{background:linear-gradient(90deg,#ff9b9b,var(--red))}
-    .bar-fill.medium{background:linear-gradient(90deg,#f7d27d,var(--amber))}
-    .bar-value{font-family:'IBM Plex Mono',monospace;font-size:12px;color:var(--soft)}
-    .summary-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:18px}
+    .panel-copy{margin:0 0 16px;color:var(--soft);font-size:14px;line-height:1.45}
+    .chart-shell{margin-top:6px}
+    .chart-shell svg{display:block;width:100%;height:auto}
+    .bar-label{fill:#f2eee6;font:12px Inter,sans-serif}
+    .value-label{fill:#f2eee6;font:700 11px 'IBM Plex Mono',monospace}
+    .grid-line{stroke:rgba(255,255,255,.10);stroke-width:1}
+    .baseline{stroke:rgba(255,255,255,.18);stroke-width:1}
+    .summary-grid{display:grid;grid-template-columns:1fr;gap:12px;margin-top:14px}
     .summary-card-long{padding:22px 24px}
     .summary-card-long h2,.build-shell h2,.repo-shell h2{font-size:clamp(30px,3vw,48px);line-height:.96;letter-spacing:-.07em;margin:12px 0 14px}
     .summary-list{display:grid;gap:14px}
@@ -199,8 +197,8 @@ const pageTitle = "Workforce Intelligence | Luanda Rodrigues";
             </div>
           </div>
           <aside class="summary-card">
-            <span class="summary-label">Snapshot atual do pipeline</span>
-            <h2>Um case com cara de painel, apoiado por outputs reais de workforce.</h2>
+            <span class="summary-label">Snapshot do painel</span>
+            <h2>Uma visão de BI puxada de outputs reais do projeto.</h2>
             <div class="mini-stats" id="heroMiniStats"></div>
           </aside>
         </div>
@@ -229,7 +227,7 @@ const pageTitle = "Workforce Intelligence | Luanda Rodrigues";
         <div class="summary-grid">
           <div class="build-shell summary-card-long">
             <span class="section-eyebrow">Resumo executivo</span>
-            <h2>O que a foto atual de workforce está mostrando.</h2>
+            <h2>O que este painel está mostrando agora.</h2>
             <div class="summary-list">
               <article>
                 <h3>Onde o risco começa a concentrar</h3>
@@ -250,34 +248,6 @@ const pageTitle = "Workforce Intelligence | Luanda Rodrigues";
                 <p>
                   O output foi pensado para ser reaproveitado. Em vez de reconstruir regra de negócio dentro de cada dashboard,
                   o projeto empurra fatos, dimensões, KPIs e camada de risco para uma base mais limpa e reutilizável.
-                </p>
-              </article>
-            </div>
-          </div>
-
-          <div class="build-shell summary-card-long">
-            <span class="section-eyebrow">Por que esse case entra no portfolio</span>
-            <h2>Este destaque está aqui para mostrar capacidade de painel, não só de modelo.</h2>
-            <div class="summary-list">
-              <article>
-                <h3>Framing de produto analítico</h3>
-                <p>
-                  O projeto foi intencionalmente montado como produto orientado a BI, então o peso está em lógica de KPI,
-                  estrutura semântica e uso decisório, e não apenas em análise exploratória.
-                </p>
-              </article>
-              <article>
-                <h3>Interação com leitura rápida</h3>
-                <p>
-                  Filtrar segmentos de workforce muda os cards e os resumos visuais na hora. Isso aproxima o case de um painel real
-                  e afasta a experiência de uma página estática de projeto.
-                </p>
-              </article>
-              <article>
-                <h3>Profundidade técnica ainda visível</h3>
-                <p>
-                  A camada de modelo continua presente, mas como suporte ao produto e não como centro absoluto da narrativa.
-                  Esse equilíbrio é exatamente o que eu queria comunicar neste segundo destaque.
                 </p>
               </article>
             </div>
@@ -514,29 +484,54 @@ const pageTitle = "Workforce Intelligence | Luanda Rodrigues";
         .join("");
     }
 
-    function renderBarRows(items, formatter, className = "") {
+    function escapeLabel(value) {
+      return String(value)
+        .replaceAll("&", "&amp;")
+        .replaceAll("<", "&lt;")
+        .replaceAll(">", "&gt;");
+    }
+
+    function renderHorizontalChart(items, formatter, palette = () => "#4bc2cf") {
       if (!items.length) return `<div class="empty-state">${copy.noResults}</div>`;
       const maxValue = Math.max(...items.map((item) => item.value), 1);
+      const chartWidth = 620;
+      const labelWidth = 164;
+      const valueWidth = 76;
+      const plotWidth = chartWidth - labelWidth - valueWidth - 10;
+      const barHeight = 18;
+      const rowGap = 26;
+      const topPad = 18;
+      const bottomPad = 18;
+      const height = topPad + items.length * rowGap + bottomPad;
+
       return `
-        <div class="bars">
-          ${items
-            .map((item) => {
-              const width = `${(item.value / maxValue) * 100}%`;
-              return `
-                <div class="bar-row">
-                  <span>${item.label}</span>
-                  <div class="bar-track">
-                    <div class="bar-fill ${className} ${
-                item.label === "High Risk" ? "high" : item.label === "Medium Risk" ? "medium" : ""
-              }" style="width:${width}"></div>
-                  </div>
-                  <span class="bar-value">${formatter(item.value)}</span>
-                </div>
-              `;
-            })
-            .join("")}
+        <div class="chart-shell">
+          <svg viewBox="0 0 ${chartWidth} ${height}" role="img" aria-label="dashboard chart">
+            ${items
+              .map((item, index) => {
+                const y = topPad + index * rowGap;
+                const width = Math.max((item.value / maxValue) * plotWidth, 8);
+                const color = palette(item.label, index);
+                return `
+                  <text class="bar-label" x="0" y="${y + 13}">${escapeLabel(item.label)}</text>
+                  <line class="grid-line" x1="${labelWidth}" y1="${y + 9}" x2="${chartWidth - valueWidth}" y2="${y + 9}"></line>
+                  <rect x="${labelWidth}" y="${y}" rx="9" ry="9" width="${width}" height="${barHeight}" fill="${color}"></rect>
+                  <text class="value-label" x="${chartWidth - valueWidth + 8}" y="${y + 13}">${formatter(item.value)}</text>
+                `;
+              })
+              .join("")}
+            <line class="baseline" x1="${labelWidth}" y1="${height - 8}" x2="${chartWidth - valueWidth}" y2="${height - 8}"></line>
+          </svg>
         </div>
       `;
+    }
+
+    function renderRiskChart(items, formatter) {
+      return renderHorizontalChart(items, formatter, (label) => {
+        if (label === "High Risk") return "#ff7777";
+        if (label === "Medium Risk") return "#f0b35f";
+        return "#4bc2cf";
+      });
     }
 
     function renderDashboard(rows) {
@@ -562,8 +557,8 @@ const pageTitle = "Workforce Intelligence | Luanda Rodrigues";
               <span class="panel-note">Média filtrada de attrition</span>
             </div>
           </div>
-          <p class="panel-copy">No filtro atual, <strong>${topAttrition}</strong> aparece como o departamento com sinal mais forte de attrition.</p>
-          ${renderBarRows(attritionByDepartment, (value) => `${(value * 100).toFixed(1).replace(".", ",")}%`)}
+          <p class="panel-copy">A leitura filtrada mantém o maior attrition de departamento sempre visível. No momento, <strong>${topAttrition}</strong> lidera esse sinal.</p>
+            ${renderHorizontalChart(attritionByDepartment, (value) => `${(value * 100).toFixed(1).replace(".", ",")}%`, () => "#5ac8d8")}
         </article>
 
         <article class="panel-card">
@@ -573,8 +568,8 @@ const pageTitle = "Workforce Intelligence | Luanda Rodrigues";
               <span class="panel-note">Contagem de colaboradores por banda</span>
             </div>
           </div>
-          <p class="panel-copy">Este painel mantém a divisão de risco legível a cada filtro, para que a concentração de alto risco nunca se perca na leitura.</p>
-          ${renderBarRows(riskCounts, (value) => value.toLocaleString("pt-BR"), "risk")}
+          <p class="panel-copy">Este painel preserva a divisão de bandas a cada filtro, para que a concentração de alto risco nunca suma da leitura.</p>
+            ${renderRiskChart(riskCounts, (value) => value.toLocaleString("pt-BR"))}
         </article>
 
         <article class="panel-card">
@@ -584,8 +579,8 @@ const pageTitle = "Workforce Intelligence | Luanda Rodrigues";
               <span class="panel-note">Índice combinado de risco e pressão</span>
             </div>
           </div>
-          <p class="panel-copy"><strong>${topRetention}</strong> lidera a leitura atual de prioridade quando sinais internos e externos entram juntos na análise.</p>
-          ${renderBarRows(retentionPriority, (value) => value.toFixed(2).replace(".", ","))}
+          <p class="panel-copy">Quando risco, pressão de mercado e criticidade entram juntos, <strong>${topRetention}</strong> fica no topo da prioridade no recorte atual.</p>
+            ${renderHorizontalChart(retentionPriority, (value) => value.toFixed(2).replace(".", ","), () => "#9fc8ff")}
         </article>
 
         <article class="panel-card">
@@ -595,8 +590,8 @@ const pageTitle = "Workforce Intelligence | Luanda Rodrigues";
               <span class="panel-note">Contexto de mercado visto pela exposição do cargo</span>
             </div>
           </div>
-          <p class="panel-copy"><strong>${topPressure}</strong> é o grupo ocupacional com maior pressão de mercado no recorte filtrado atual.</p>
-          ${renderBarRows(externalPressure, (value) => value.toFixed(2).replace(".", ","))}
+          <p class="panel-copy">Este painel explicita o lado de mercado. No recorte atual, <strong>${topPressure}</strong> enfrenta a pressão externa mais forte.</p>
+            ${renderHorizontalChart(externalPressure, (value) => value.toFixed(2).replace(".", ","), () => "#d7ff6f")}
         </article>
       `;
     }
