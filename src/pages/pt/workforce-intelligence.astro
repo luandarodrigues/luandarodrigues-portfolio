@@ -64,6 +64,8 @@ const pageTitle = "Workforce Intelligence | Luanda Rodrigues";
     .hero-metric strong{display:block;font-size:26px;letter-spacing:-.06em}
     .shell{padding:16px;background:linear-gradient(180deg,rgba(255,255,255,.06),rgba(255,255,255,.03))}
     .controls-shell{display:grid;gap:14px;overflow:visible}
+    .filter-toolbar{display:flex;justify-content:space-between;gap:16px;align-items:center}
+    .filter-toolbar h3{margin:0;font-size:13px;letter-spacing:.08em;text-transform:uppercase;font-family:'IBM Plex Mono',monospace;color:var(--soft)}
     .filter-row{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px;align-items:start;overflow:visible}
     details.filter-group{position:relative;border:1px solid var(--line);border-radius:16px;background:linear-gradient(180deg,rgba(255,255,255,.05),rgba(255,255,255,.02));padding:10px 12px;min-height:58px}
     details.filter-group summary{list-style:none;cursor:pointer;color:var(--soft);font-size:11px;text-transform:uppercase;letter-spacing:.08em;font-weight:700}
@@ -76,20 +78,16 @@ const pageTitle = "Workforce Intelligence | Luanda Rodrigues";
     .filter-actions{display:flex;justify-content:flex-end;align-items:center}
     .reset-btn{appearance:none;border:1px solid var(--line);border-radius:999px;background:var(--ink);color:var(--bg);padding:12px 15px;font-weight:800;cursor:pointer}
     .kpi-band{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:10px}
-    .kpi-card{padding:16px;min-height:104px;display:grid;align-content:space-between;background:linear-gradient(180deg,rgba(255,255,255,.09),rgba(255,255,255,.03))}
+    .kpi-card{padding:16px;min-height:104px;display:grid;align-content:space-between;background:linear-gradient(180deg,rgba(255,255,255,.09),rgba(255,255,255,.03));box-shadow:inset 0 1px 0 rgba(255,255,255,.03)}
     .kpi-value{font-size:36px;letter-spacing:-.07em;font-weight:800;color:#fffdf8}
     .dashboard-panels{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
-    .panel-card{padding:20px;min-height:336px;background:linear-gradient(135deg,rgba(255,255,255,.08),rgba(255,255,255,.025));display:grid;grid-template-rows:auto auto 1fr;align-content:start;overflow:hidden}
+    .panel-card{padding:20px;min-height:336px;background:linear-gradient(135deg,rgba(255,255,255,.08),rgba(255,255,255,.025));display:grid;grid-template-rows:auto auto 1fr;align-content:start;overflow:hidden;box-shadow:inset 0 1px 0 rgba(255,255,255,.03)}
     .panel-head{display:flex;justify-content:space-between;gap:12px;align-items:flex-start;margin-bottom:16px}
     .panel-head h3{margin:0;font-size:24px;line-height:1;letter-spacing:-.05em}
     .panel-note{font-size:9px;color:var(--acid)}
     .panel-copy{margin:0 0 16px;color:#d5d0c6;font-size:14px;line-height:1.45;max-width:54ch}
-    .chart-shell{align-self:end}
+    .chart-shell{align-self:end;padding:14px 14px 10px;border:1px solid rgba(255,255,255,.08);border-radius:18px;background:rgba(0,0,0,.18)}
     .chart-shell svg{display:block;width:100%;height:auto}
-    .bar-label{fill:#e9e2d6;font:600 12px Inter,sans-serif}
-    .value-label{fill:#fffaf2;font:700 11px 'IBM Plex Mono',monospace}
-    .grid-line{stroke:rgba(255,255,255,.08);stroke-width:1}
-    .baseline{stroke:rgba(255,255,255,.2);stroke-width:1}
     .readout-shell{display:grid;grid-template-columns:minmax(0,1fr) minmax(320px,.9fr);gap:14px}
     .readout-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px}
     .readout-card{padding:16px;background:linear-gradient(180deg,rgba(255,255,255,.08),rgba(255,255,255,.03));min-height:118px}
@@ -213,10 +211,11 @@ const pageTitle = "Workforce Intelligence | Luanda Rodrigues";
           </div>
 
           <div class="shell controls-shell">
-            <div class="filter-row" id="filterBar"></div>
-            <div class="filter-actions">
+            <div class="filter-toolbar">
+              <h3>Filtrar o recorte atual</h3>
               <button class="reset-btn" id="resetFilters" type="button">Limpar filtros</button>
             </div>
+            <div class="filter-row" id="filterBar"></div>
           </div>
 
           <div class="kpi-band" id="kpiBand"></div>
@@ -590,14 +589,14 @@ const pageTitle = "Workforce Intelligence | Luanda Rodrigues";
                 const y = topPad + index * rowGap;
                 const width = Math.max((item.value / maxValue) * plotWidth, 8);
                 return `
-                  <text class="bar-label" x="0" y="${y + 13}">${escapeLabel(item.label)}</text>
-                  <line class="grid-line" x1="${labelWidth}" y1="${y + 9}" x2="${chartWidth - valueWidth}" y2="${y + 9}"></line>
+                  <text x="0" y="${y + 13}" fill="#f3eee4" style="font:600 12px Inter, sans-serif">${escapeLabel(item.label)}</text>
+                  <line x1="${labelWidth}" y1="${y + 9}" x2="${chartWidth - valueWidth}" y2="${y + 9}" stroke="rgba(255,255,255,.08)" stroke-width="1"></line>
                   <rect x="${labelWidth}" y="${y}" rx="9" ry="9" width="${width}" height="${barHeight}" fill="${palette(item.label, index)}"></rect>
-                  <text class="value-label" x="${chartWidth - valueWidth + 8}" y="${y + 13}">${formatter(item.value)}</text>
+                  <text x="${chartWidth - valueWidth + 8}" y="${y + 13}" fill="#fffaf2" style="font:700 11px 'IBM Plex Mono', monospace">${formatter(item.value)}</text>
                 `;
               })
               .join("")}
-            <line class="baseline" x1="${labelWidth}" y1="${height - 8}" x2="${chartWidth - valueWidth}" y2="${height - 8}"></line>
+            <line x1="${labelWidth}" y1="${height - 8}" x2="${chartWidth - valueWidth}" y2="${height - 8}" stroke="rgba(255,255,255,.2)" stroke-width="1"></line>
           </svg>
         </div>
       `;
