@@ -90,11 +90,11 @@ const pageTitle = "Workforce Intelligence | Luanda Rodrigues";
     .kpi-value{font:700 30px/.92 var(--heading);letter-spacing:-.07em;color:#fffdf8}
     .analytics-shell{padding:28px;background:linear-gradient(180deg,rgba(255,255,255,.05),rgba(255,255,255,.018));display:grid;gap:28px;border-radius:34px}
     .dashboard-sectors{display:grid;gap:30px;padding:0}
-    .sector-block{display:grid;grid-template-columns:260px 1fr;gap:28px;padding:28px;border:1px solid rgba(255,255,255,.12);border-radius:34px;background:linear-gradient(180deg,rgba(255,255,255,.04),rgba(255,255,255,.012))}
-    .sector-head{display:grid;grid-template-columns:1fr;gap:10px;align-items:start;padding:6px 22px 6px 2px;border-right:1px solid rgba(255,255,255,.08)}
+    .sector-block{display:grid;grid-template-columns:260px 1fr;gap:24px;align-items:start}
+    .sector-head{display:grid;grid-template-columns:1fr;gap:10px;align-items:start;padding:22px;border:1px solid rgba(255,255,255,.12);border-radius:24px;background:linear-gradient(180deg,rgba(255,255,255,.05),rgba(255,255,255,.02));box-shadow:0 16px 32px rgba(0,0,0,.16)}
     .sector-head h4{margin:0;font:700 24px/.98 var(--heading);letter-spacing:-.05em}
     .sector-head p{margin:0;color:var(--soft);font-size:13px;line-height:1.6;max-width:32ch}
-    .sector-panels{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:26px;align-items:stretch}
+    .sector-panels{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:22px;align-items:stretch}
     .panel-card{padding:0;min-height:0;background:linear-gradient(180deg,rgba(17,17,17,.96),rgba(10,10,10,.92));border:1px solid rgba(255,255,255,.16);display:grid;grid-template-rows:auto 1fr;align-content:start;overflow:hidden;border-radius:28px;box-shadow:0 24px 48px rgba(0,0,0,.24),inset 0 1px 0 rgba(255,255,255,.04)}
     .panel-head{display:grid;gap:7px;align-items:flex-start;margin-bottom:0;padding:20px 22px 16px;background:linear-gradient(180deg,rgba(255,255,255,.05),rgba(255,255,255,.012));border-bottom:1px solid rgba(255,255,255,.10)}
     .panel-head h3{margin:0;font:700 19px/1.06 var(--heading);letter-spacing:-.045em;max-width:15ch}
@@ -140,8 +140,6 @@ const pageTitle = "Workforce Intelligence | Luanda Rodrigues";
     @media(max-width:1280px){
       .dashboard-head,.tab-copy,.below-fold,.build-grid,.analytics-foot{grid-template-columns:1fr}
       .kpi-band{grid-template-columns:repeat(3,minmax(0,1fr))}
-      .sector-block{grid-template-columns:1fr}
-      .sector-head{padding:0 0 16px;border-right:0;border-bottom:1px solid rgba(255,255,255,.08)}
       .readout-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
     }
     @media(max-width:980px){
@@ -152,8 +150,9 @@ const pageTitle = "Workforce Intelligence | Luanda Rodrigues";
       .topnav{justify-content:flex-start;overflow-x:auto;gap:10px;height:auto;padding:12px 0}
       .topnav a{font-size:11px;letter-spacing:.06em;flex:0 0 auto;border:1px solid var(--line);border-radius:999px;padding:8px 10px}
       .dashboard-shell{padding-top:18px}
-      .filter-row,.sector-panels,.build-grid,.below-fold{grid-template-columns:1fr}
+      .filter-row,.sector-panels,.build-grid,.below-fold,.sector-block{grid-template-columns:1fr}
       .kpi-band{grid-template-columns:repeat(2,minmax(0,1fr))}
+      .sector-head{padding:20px}
       .controls-shell,.tab-copy,.takeaway-shell,.narrative-card-wide,.build-shell{padding-left:18px;padding-right:18px}
     }
     @media(max-width:560px){
