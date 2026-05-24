@@ -90,17 +90,16 @@ const pageTitle = "Workforce Intelligence | Luanda Rodrigues";
     .kpi-card{padding:18px 16px 16px;min-height:96px;display:grid;align-content:end;background:none;border-right:1px solid rgba(255,255,255,.08);border-radius:0}
     .kpi-card:last-child{border-right:0}
     .kpi-value{font:700 32px/.92 var(--heading);letter-spacing:-.07em;color:#fffdf8}
-    .dashboard-sectors{display:grid;gap:18px;padding:18px 24px 0}
-    .sector-block{display:grid;gap:16px;padding:18px;border:1px solid rgba(255,255,255,.08);border-radius:26px;background:linear-gradient(180deg,rgba(255,255,255,.04),rgba(255,255,255,.018))}
-    .sector-head{display:grid;grid-template-columns:minmax(0,1fr) minmax(260px,.68fr);gap:18px;align-items:end;padding-bottom:14px;border-bottom:1px solid rgba(255,255,255,.08)}
+    .dashboard-sectors{display:grid;gap:22px;padding:22px 24px 0}
+    .sector-block{display:grid;gap:18px;padding:24px;border:1px solid rgba(255,255,255,.08);border-radius:28px;background:linear-gradient(180deg,rgba(255,255,255,.045),rgba(255,255,255,.016))}
+    .sector-head{display:grid;grid-template-columns:minmax(0,1fr) minmax(260px,.62fr);gap:24px;align-items:start;padding-bottom:18px;border-bottom:1px solid rgba(255,255,255,.08)}
     .sector-head h4{margin:0;font:700 18px/1 var(--heading);letter-spacing:-.03em}
-    .sector-head p{margin:0;color:var(--muted);font-size:13px;line-height:1.45}
+    .sector-head p{margin:0;color:var(--soft);font-size:14px;line-height:1.55;max-width:34ch}
     .sector-panels{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
-    .panel-card{padding:18px;min-height:292px;background:rgba(0,0,0,.16);border:1px solid rgba(255,255,255,.07);display:grid;grid-template-rows:auto auto 1fr;align-content:start;overflow:hidden;box-shadow:inset 0 1px 0 rgba(255,255,255,.025)}
-    .panel-head{display:flex;justify-content:space-between;gap:12px;align-items:flex-start;margin-bottom:14px}
-    .panel-head h3{margin:0;font:700 21px/1.02 var(--heading);letter-spacing:-.05em;max-width:16ch}
+    .panel-card{padding:18px 18px 16px;min-height:254px;background:rgba(0,0,0,.14);border:1px solid rgba(255,255,255,.07);display:grid;grid-template-rows:auto 1fr;align-content:start;overflow:hidden;box-shadow:inset 0 1px 0 rgba(255,255,255,.025)}
+    .panel-head{display:grid;gap:6px;align-items:flex-start;margin-bottom:16px}
+    .panel-head h3{margin:0;font:700 22px/1.04 var(--heading);letter-spacing:-.05em;max-width:15ch}
     .panel-note{font-size:9px;color:var(--acid)}
-    .panel-copy{margin:0 0 14px;color:#d5d0c6;font-size:13px;line-height:1.52;max-width:none}
     .chart-shell{align-self:end;margin-top:auto;padding:14px 14px 10px;border:1px solid rgba(255,255,255,.08);border-radius:18px;background:rgba(255,255,255,.02)}
     .chart-shell svg{display:block;width:100%;height:auto}
     .list-shell{display:grid;gap:10px}
@@ -109,20 +108,20 @@ const pageTitle = "Workforce Intelligence | Luanda Rodrigues";
     .list-row strong{display:block;font-size:15px;line-height:1.3}
     .list-row span{display:block;color:var(--soft);font-size:12px;line-height:1.35}
     .list-row em{font-style:normal;font-family:'IBM Plex Mono',monospace;color:#fffaf2}
-    .readout-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px;padding:0 24px}
-    .readout-card{padding:16px 0 0;background:none;min-height:86px;border:0;border-top:1px solid rgba(255,255,255,.08);border-radius:0}
+    .readout-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px;padding:2px 24px 0}
+    .readout-card{padding:16px 16px 18px;background:rgba(255,255,255,.03);min-height:108px;border:1px solid rgba(255,255,255,.08);border-radius:18px}
     .readout-card strong{display:block;font:700 22px/1 var(--heading);letter-spacing:-.05em;color:#fffdf8}
     .readout-card span{display:block;margin-top:5px;color:var(--soft);font-size:12px;line-height:1.35}
-    .narrative-card{padding:20px;background:linear-gradient(135deg,rgba(255,255,255,.05),rgba(255,255,255,.02))}
-    .narrative-card-wide{margin:4px 24px 0}
+    .narrative-card{padding:24px;background:linear-gradient(135deg,rgba(255,255,255,.05),rgba(255,255,255,.02))}
+    .narrative-card-wide{margin:6px 24px 0}
     .narrative-card h3{margin:10px 0 14px;font:700 24px/1 var(--heading);letter-spacing:-.04em}
     .narrative-copy{display:grid;gap:12px}
     .narrative-copy article{padding-top:12px;border-top:1px solid var(--line)}
     .narrative-copy article:first-child{padding-top:0;border-top:0}
     .narrative-copy h4{margin:0 0 6px;font:700 18px/1.08 var(--heading);letter-spacing:-.03em}
     .narrative-copy p{margin:0;color:var(--soft);font-size:14px;line-height:1.45}
-    .below-fold{display:grid;grid-template-columns:minmax(0,1.08fr) minmax(320px,.92fr);gap:16px;margin-top:18px;align-items:start}
-    .summary-card,.repo-card{padding:22px}
+    .below-fold{display:grid;grid-template-columns:minmax(0,1.08fr) minmax(320px,.92fr);gap:22px;margin-top:28px;align-items:start}
+    .summary-card,.repo-card{padding:28px}
     .summary-card h2,.repo-card h2{font:700 30px/.96 var(--heading);letter-spacing:-.07em;margin:10px 0 14px;max-width:15ch}
     .summary-list{display:grid;gap:14px}
     .summary-list article{padding-top:12px;border-top:1px solid var(--line)}
@@ -974,16 +973,13 @@ const pageTitle = "Workforce Intelligence | Luanda Rodrigues";
                 ${sector.panels
                   .map(
                     (panel) => `
-                      <article class="panel-card">
-                        <div class="panel-head">
-                          <div>
+                        <article class="panel-card">
+                          <div class="panel-head">
                             <h3>${panel.title}</h3>
                             <span class="panel-note">${panel.note}</span>
                           </div>
-                        </div>
-                        <p class="panel-copy">${panel.copy}</p>
-                        ${panel.chart}
-                      </article>
+                          ${panel.chart}
+                        </article>
                     `,
                   )
                   .join("")}
