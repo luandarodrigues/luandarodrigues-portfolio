@@ -88,18 +88,18 @@ const pageTitle = "Workforce Intelligence | Luanda Rodrigues";
     .kpi-band{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:10px;padding:0}
     .kpi-card{padding:16px 14px 14px;min-height:96px;display:grid;align-content:end;background:linear-gradient(180deg,rgba(255,255,255,.085),rgba(255,255,255,.035));border:1px solid rgba(255,255,255,.08);border-radius:18px}
     .kpi-value{font:700 30px/.92 var(--heading);letter-spacing:-.07em;color:#fffdf8}
-    .analytics-shell{padding:28px;background:linear-gradient(180deg,rgba(255,255,255,.05),rgba(255,255,255,.018));display:grid;gap:28px;border-radius:34px}
-    .dashboard-sectors{display:grid;gap:30px;padding:0}
-    .sector-block{display:grid;grid-template-columns:260px 1fr;gap:24px;align-items:start}
-    .sector-head{display:grid;grid-template-columns:1fr;gap:10px;align-items:start;padding:22px;border:1px solid rgba(255,255,255,.12);border-radius:24px;background:linear-gradient(180deg,rgba(255,255,255,.05),rgba(255,255,255,.02));box-shadow:0 16px 32px rgba(0,0,0,.16)}
-    .sector-head h4{margin:0;font:700 24px/.98 var(--heading);letter-spacing:-.05em}
-    .sector-head p{margin:0;color:var(--soft);font-size:13px;line-height:1.6;max-width:32ch}
-    .sector-panels{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:22px;align-items:stretch}
+    .analytics-shell{padding:0;background:transparent;border:0;display:grid;gap:34px}
+    .dashboard-sectors{display:grid;gap:46px;padding:0}
+    .sector-block{display:grid;gap:18px;align-items:start}
+    .sector-head{display:grid;grid-template-columns:240px 1fr;gap:30px;align-items:start;padding:0;border:0;border-radius:0;background:transparent;box-shadow:none}
+    .sector-head h4{margin:0;font:700 34px/.95 var(--heading);letter-spacing:-.06em;max-width:12ch}
+    .sector-head p{margin:0;color:var(--soft);font-size:17px;line-height:1.55;max-width:58ch}
+    .sector-panels{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px;align-items:stretch}
     .panel-card{padding:0;min-height:0;background:linear-gradient(180deg,rgba(17,17,17,.96),rgba(10,10,10,.92));border:1px solid rgba(255,255,255,.16);display:grid;grid-template-rows:auto 1fr;align-content:start;overflow:hidden;border-radius:28px;box-shadow:0 24px 48px rgba(0,0,0,.24),inset 0 1px 0 rgba(255,255,255,.04)}
     .panel-head{display:grid;gap:7px;align-items:flex-start;margin-bottom:0;padding:20px 22px 16px;background:linear-gradient(180deg,rgba(255,255,255,.05),rgba(255,255,255,.012));border-bottom:1px solid rgba(255,255,255,.10)}
     .panel-head h3{margin:0;font:700 19px/1.06 var(--heading);letter-spacing:-.045em;max-width:15ch}
-    .panel-note{font-size:9px;color:#bdb7a8}
-    .chart-shell{align-self:end;margin:16px;padding:18px 18px 16px;border:1px solid rgba(255,255,255,.10);border-radius:22px;background:linear-gradient(180deg,rgba(255,255,255,.02),rgba(0,0,0,.18));box-shadow:inset 0 1px 0 rgba(255,255,255,.02)}
+    .panel-note{font-size:10px;color:#bdb7a8}
+    .chart-shell{align-self:end;margin:16px;padding:18px 18px 16px;border:1px solid rgba(255,255,255,.08);border-radius:22px;background:linear-gradient(180deg,rgba(255,255,255,.018),rgba(8,8,8,.18));box-shadow:inset 0 1px 0 rgba(255,255,255,.02)}
     .chart-shell svg{display:block;width:100%;height:auto}
     .list-shell{display:grid;gap:10px}
     .list-row{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:12px;align-items:center;padding:12px 0;border-top:1px solid rgba(255,255,255,.08)}
@@ -138,7 +138,7 @@ const pageTitle = "Workforce Intelligence | Luanda Rodrigues";
     .build-card h3{margin:12px 0 8px;font:700 19px/1.06 var(--heading);letter-spacing:-.04em}
     .empty-state{padding:18px;border:1px dashed var(--line);border-radius:18px;color:var(--soft);font-size:14px}
     @media(max-width:1280px){
-      .dashboard-head,.tab-copy,.below-fold,.build-grid,.analytics-foot{grid-template-columns:1fr}
+      .dashboard-head,.tab-copy,.below-fold,.build-grid,.analytics-foot,.sector-head{grid-template-columns:1fr}
       .kpi-band{grid-template-columns:repeat(3,minmax(0,1fr))}
       .readout-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
     }
