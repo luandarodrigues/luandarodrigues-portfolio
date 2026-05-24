@@ -87,7 +87,12 @@ const pageTitle = "Workforce Intelligence | Luanda Rodrigues";
     .kpi-band{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}
     .kpi-card{padding:18px;min-height:112px;display:grid;align-content:space-between;background:linear-gradient(180deg,rgba(255,255,255,.09),rgba(255,255,255,.03));box-shadow:inset 0 1px 0 rgba(255,255,255,.03)}
     .kpi-value{font:700 34px/.92 var(--heading);letter-spacing:-.07em;color:#fffdf8}
-    .dashboard-panels{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
+    .dashboard-sectors{display:grid;gap:18px}
+    .sector-block{display:grid;gap:12px}
+    .sector-head{display:grid;grid-template-columns:minmax(0,1fr) minmax(260px,.72fr);gap:16px;align-items:end}
+    .sector-head h4{margin:0;font:700 16px/1 var(--heading);letter-spacing:-.03em}
+    .sector-head p{margin:0;color:var(--muted);font-size:13px;line-height:1.45}
+    .sector-panels{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
     .panel-card{padding:22px;min-height:324px;background:linear-gradient(135deg,rgba(255,255,255,.08),rgba(255,255,255,.025));display:grid;grid-template-rows:auto auto 1fr;align-content:start;overflow:hidden;box-shadow:inset 0 1px 0 rgba(255,255,255,.03)}
     .panel-head{display:flex;justify-content:space-between;gap:12px;align-items:flex-start;margin-bottom:14px}
     .panel-head h3{margin:0;font:700 24px/1.02 var(--heading);letter-spacing:-.05em;max-width:15ch}
@@ -101,12 +106,12 @@ const pageTitle = "Workforce Intelligence | Luanda Rodrigues";
     .list-row strong{display:block;font-size:15px;line-height:1.3}
     .list-row span{display:block;color:var(--soft);font-size:12px;line-height:1.35}
     .list-row em{font-style:normal;font-family:'IBM Plex Mono',monospace;color:#fffaf2}
-    .readout-shell{display:grid;grid-template-columns:minmax(0,1.12fr) minmax(320px,.88fr);gap:16px}
-    .readout-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+    .readout-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px}
     .readout-card{padding:16px;background:linear-gradient(180deg,rgba(255,255,255,.08),rgba(255,255,255,.03));min-height:118px}
     .readout-card strong{display:block;font:700 24px/1 var(--heading);letter-spacing:-.06em;color:#fffdf8}
     .readout-card span{display:block;margin-top:5px;color:var(--soft);font-size:12px;line-height:1.35}
     .narrative-card{padding:18px;background:linear-gradient(135deg,rgba(255,255,255,.07),rgba(255,255,255,.025))}
+    .narrative-card-wide{margin-top:18px}
     .narrative-card h3{margin:10px 0 14px;font:700 24px/1 var(--heading);letter-spacing:-.04em}
     .narrative-copy{display:grid;gap:12px}
     .narrative-copy article{padding-top:12px;border-top:1px solid var(--line)}
@@ -130,7 +135,7 @@ const pageTitle = "Workforce Intelligence | Luanda Rodrigues";
     .build-card h3{margin:12px 0 8px;font:700 19px/1.06 var(--heading);letter-spacing:-.04em}
     .empty-state{padding:18px;border:1px dashed var(--line);border-radius:18px;color:var(--soft);font-size:14px}
     @media(max-width:1280px){
-      .dashboard-head,.tab-copy,.readout-shell,.below-fold,.build-grid{grid-template-columns:1fr}
+      .dashboard-head,.tab-copy,.below-fold,.build-grid,.sector-head{grid-template-columns:1fr}
       .kpi-band{grid-template-columns:repeat(2,minmax(0,1fr))}
       .readout-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
       .tab-rail{justify-content:flex-start}
@@ -143,7 +148,7 @@ const pageTitle = "Workforce Intelligence | Luanda Rodrigues";
       .topnav{justify-content:flex-start;overflow-x:auto;gap:10px;height:auto;padding:12px 0}
       .topnav a{font-size:11px;letter-spacing:.06em;flex:0 0 auto;border:1px solid var(--line);border-radius:999px;padding:8px 10px}
       .dashboard-shell{padding-top:18px}
-      .filter-row,.dashboard-panels,.build-grid,.below-fold{grid-template-columns:1fr}
+      .filter-row,.sector-panels,.build-grid,.below-fold{grid-template-columns:1fr}
       .kpi-band{grid-template-columns:repeat(2,minmax(0,1fr))}
       .tab-rail{flex-wrap:wrap}
     }
@@ -244,15 +249,12 @@ const pageTitle = "Workforce Intelligence | Luanda Rodrigues";
           </div>
 
           <div class="kpi-band" id="kpiBand"></div>
-          <div class="dashboard-panels" id="dashboardGrid"></div>
-
-          <div class="readout-shell">
-            <div class="readout-grid" id="readoutGrid"></div>
-            <div class="narrative-card">
-              <span class="readout-label">Decision notes</span>
-              <h3 id="narrativeTitle">What stands out in the current cut</h3>
-              <div class="narrative-copy" id="insightCopy"></div>
-            </div>
+          <div class="readout-grid" id="readoutGrid"></div>
+          <div class="dashboard-sectors" id="dashboardGrid"></div>
+          <div class="narrative-card narrative-card-wide">
+            <span class="readout-label">Decision notes</span>
+            <h3 id="narrativeTitle">What stands out in the current cut</h3>
+            <div class="narrative-copy" id="insightCopy"></div>
           </div>
         </section>
 
@@ -739,34 +741,48 @@ const pageTitle = "Workforce Intelligence | Luanda Rodrigues";
       const retentionPriority = groupAverage(rows, "department_name", "retention_priority_index");
       const externalPressure = groupAverage(rows, "occupation_group", "external_pressure_score");
       return {
-        panels: [
+        sectors: [
           {
-            title: "Attrition by Department",
-            note: "filtered average attrition rate",
-            copy: "This view keeps the department-level attrition signal visible without reducing the panel to one metric.",
-            chart: renderHorizontalChart(attritionByDepartment, (value) => `${(value * 100).toFixed(1)}%`, () => "#5ac8d8"),
+            eyebrow: "Core signal",
+            title: "Attrition and modeled risk",
+            text: "This first sector keeps the internal signal clean: who is exposed, how much risk is concentrated, and where the executive story starts.",
+            panels: [
+              {
+                title: "Attrition by Department",
+                note: "filtered average attrition rate",
+                copy: "This view keeps the department-level attrition signal visible without reducing the panel to one metric.",
+                chart: renderHorizontalChart(attritionByDepartment, (value) => `${(value * 100).toFixed(1)}%`, () => "#5ac8d8"),
+              },
+              {
+                title: "Risk Band Distribution",
+                note: "employee counts by modeled band",
+                copy: "The modeled bands keep the concentration of risk readable, especially when the high-risk slice is smaller but still urgent.",
+                chart: renderHorizontalChart(riskCounts, (value) => value.toLocaleString("en-US"), (label) => {
+                  if (label === "High Risk") return "#ff7676";
+                  if (label === "Medium Risk") return "#f0b35f";
+                  return "#5ac8d8";
+                }),
+              },
+            ],
           },
           {
-            title: "Risk Band Distribution",
-            note: "employee counts by modeled band",
-            copy: "The modeled bands keep the concentration of risk readable, especially when the high-risk slice is small but still urgent.",
-            chart: renderHorizontalChart(riskCounts, (value) => value.toLocaleString("en-US"), (label) => {
-              if (label === "High Risk") return "#ff7676";
-              if (label === "Medium Risk") return "#f0b35f";
-              return "#5ac8d8";
-            }),
-          },
-          {
-            title: "Retention Priority by Department",
-            note: "combined risk and pressure index",
-            copy: "This is the more operational view: departments rise when internal vulnerability and external pull move together.",
-            chart: renderHorizontalChart(retentionPriority, (value) => value.toFixed(2), () => "#98c1ff"),
-          },
-          {
-            title: "External Pressure by Occupation Group",
-            note: "market context by role exposure",
-            copy: "The market layer shows which occupation groups are more exposed to labor pressure in the current cut.",
-            chart: renderHorizontalChart(externalPressure, (value) => value.toFixed(2), () => "#d7ff6f"),
+            eyebrow: "Decision layer",
+            title: "Priority and market pull",
+            text: "The second sector shifts from signal to action by combining internal vulnerability with market pressure in the same read.",
+            panels: [
+              {
+                title: "Retention Priority by Department",
+                note: "combined risk and pressure index",
+                copy: "This is the more operational view: departments rise when internal vulnerability and external pull move together.",
+                chart: renderHorizontalChart(retentionPriority, (value) => value.toFixed(2), () => "#98c1ff"),
+              },
+              {
+                title: "External Pressure by Occupation Group",
+                note: "market context by role exposure",
+                copy: "The market layer shows which occupation groups are more exposed to labor pressure in the current cut.",
+                chart: renderHorizontalChart(externalPressure, (value) => value.toFixed(2), () => "#d7ff6f"),
+              },
+            ],
           },
         ],
         readoutCards: [
@@ -798,30 +814,44 @@ const pageTitle = "Workforce Intelligence | Luanda Rodrigues";
       const drivers = countBy(rows, "main_risk_driver", [], 4);
       const actions = countBy(rows, "recommended_action", [], 4);
       return {
-        panels: [
+        sectors: [
           {
-            title: "Risk by Job Role",
-            note: "average attrition probability",
-            copy: "Role-level concentration shows where modeled risk is clustering after the current filters are applied.",
-            chart: renderHorizontalChart(riskByRole, (value) => value.toFixed(2), () => "#98c1ff"),
+            eyebrow: "Concentration",
+            title: "Where modeled risk accumulates",
+            text: "The first sector shows how the scoring layer concentrates risk across roles and pay structure after the current filters are applied.",
+            panels: [
+              {
+                title: "Risk by Job Role",
+                note: "average attrition probability",
+                copy: "Role-level concentration shows where modeled risk is clustering after the current filters are applied.",
+                chart: renderHorizontalChart(riskByRole, (value) => value.toFixed(2), () => "#98c1ff"),
+              },
+              {
+                title: "Risk by Salary Band",
+                note: "average attrition probability",
+                copy: "This view isolates whether modeled risk is landing more heavily in lower, middle, or higher pay segments.",
+                chart: renderHorizontalChart(riskBySalary, (value) => value.toFixed(2), () => "#5ac8d8"),
+              },
+            ],
           },
           {
-            title: "Risk by Salary Band",
-            note: "average attrition probability",
-            copy: "This view isolates whether modeled risk is landing more heavily in lower, middle, or higher pay segments.",
-            chart: renderHorizontalChart(riskBySalary, (value) => value.toFixed(2), () => "#5ac8d8"),
-          },
-          {
-            title: "Main Risk Drivers",
-            note: "count of employees by dominant driver",
-            copy: "The driver layer makes the score more explainable by surfacing the patterns behind the modeled risk.",
-            chart: renderHorizontalChart(drivers, (value) => value.toLocaleString("en-US"), () => "#f0b35f"),
-          },
-          {
-            title: "Recommended Actions",
-            note: "count of employees by suggested action",
-            copy: "The action layer turns the score into something closer to a planning conversation, not just a ranked list.",
-            chart: renderList(actions, "recommended action counts"),
+            eyebrow: "Explainability",
+            title: "Drivers and operational response",
+            text: "The second sector is there to explain the score and push it closer to an action layer instead of a probability-only view.",
+            panels: [
+              {
+                title: "Main Risk Drivers",
+                note: "count of employees by dominant driver",
+                copy: "The driver layer makes the score more explainable by surfacing the patterns behind the modeled risk.",
+                chart: renderHorizontalChart(drivers, (value) => value.toLocaleString("en-US"), () => "#f0b35f"),
+              },
+              {
+                title: "Recommended Actions",
+                note: "count of employees by suggested action",
+                copy: "The action layer turns the score into something closer to a planning conversation, not just a ranked list.",
+                chart: renderList(actions, "recommended action counts"),
+              },
+            ],
           },
         ],
         readoutCards: [
@@ -857,30 +887,44 @@ const pageTitle = "Workforce Intelligence | Luanda Rodrigues";
         { label: "Labor Demand Index", value: metrics.laborDemandIndex },
       ];
       return {
-        panels: [
+        sectors: [
           {
-            title: "External Pressure by Occupation Group",
-            note: "average external pressure score",
-            copy: "Occupation groups are the cleanest way to read where the outside market is likely to pull hardest.",
-            chart: renderHorizontalChart(byOccupation, (value) => value.toFixed(2), () => "#d7ff6f"),
+            eyebrow: "Exposure map",
+            title: "Where the market pulls hardest",
+            text: "This first market sector maps pressure back into workforce structure so the external layer stays legible for business users.",
+            panels: [
+              {
+                title: "External Pressure by Occupation Group",
+                note: "average external pressure score",
+                copy: "Occupation groups are the cleanest way to read where the outside market is likely to pull hardest.",
+                chart: renderHorizontalChart(byOccupation, (value) => value.toFixed(2), () => "#d7ff6f"),
+              },
+              {
+                title: "Departments Exposed to Market Pressure",
+                note: "average external pressure score",
+                copy: "This translation back to departments shows where market pull becomes a workforce-planning issue inside the company.",
+                chart: renderHorizontalChart(byDepartment, (value) => value.toFixed(2), () => "#98c1ff"),
+              },
+            ],
           },
           {
-            title: "Departments Exposed to Market Pressure",
-            note: "average external pressure score",
-            copy: "This translation back to departments shows where market pull becomes a workforce-planning issue inside the company.",
-            chart: renderHorizontalChart(byDepartment, (value) => value.toFixed(2), () => "#98c1ff"),
-          },
-          {
-            title: "Market Indicator Snapshot",
-            note: "current external signal set",
-            copy: "The market layer is made of unemployment, wage, and labor-demand signals that feed the pressure score.",
-            chart: renderHorizontalChart(marketIndicators, (value) => value.toFixed(2), (label, index) => ["#ff7676", "#f0b35f", "#5ac8d8"][index] || "#5ac8d8"),
-          },
-          {
-            title: "External Pressure by Job Role",
-            note: "average external pressure score",
-            copy: "This role cut helps connect occupation-level pressure back to the specific workforce roles shown in the case.",
-            chart: renderHorizontalChart(byRole, (value) => value.toFixed(2), () => "#d7ff6f"),
+            eyebrow: "Signal layer",
+            title: "What is feeding the pressure score",
+            text: "This second sector isolates the indicators and role mapping that make the external score explainable rather than decorative.",
+            panels: [
+              {
+                title: "Market Indicator Snapshot",
+                note: "current external signal set",
+                copy: "The market layer is made of unemployment, wage, and labor-demand signals that feed the pressure score.",
+                chart: renderHorizontalChart(marketIndicators, (value) => value.toFixed(2), (label, index) => ["#ff7676", "#f0b35f", "#5ac8d8"][index] || "#5ac8d8"),
+              },
+              {
+                title: "External Pressure by Job Role",
+                note: "average external pressure score",
+                copy: "This role cut helps connect occupation-level pressure back to the specific workforce roles shown in the case.",
+                chart: renderHorizontalChart(byRole, (value) => value.toFixed(2), () => "#d7ff6f"),
+              },
+            ],
           },
         ],
         readoutCards: [
@@ -907,19 +951,36 @@ const pageTitle = "Workforce Intelligence | Luanda Rodrigues";
     }
 
     function renderPanels(panelData) {
-      document.getElementById("dashboardGrid").innerHTML = panelData.panels
+      document.getElementById("dashboardGrid").innerHTML = panelData.sectors
         .map(
-          (panel) => `
-            <article class="panel-card">
-              <div class="panel-head">
+          (sector) => `
+            <section class="sector-block">
+              <div class="sector-head">
                 <div>
-                  <h3>${panel.title}</h3>
-                  <span class="panel-note">${panel.note}</span>
+                  <span class="eyebrow">${sector.eyebrow}</span>
+                  <h4>${sector.title}</h4>
                 </div>
+                <p>${sector.text}</p>
               </div>
-              <p class="panel-copy">${panel.copy}</p>
-              ${panel.chart}
-            </article>
+              <div class="sector-panels">
+                ${sector.panels
+                  .map(
+                    (panel) => `
+                      <article class="panel-card">
+                        <div class="panel-head">
+                          <div>
+                            <h3>${panel.title}</h3>
+                            <span class="panel-note">${panel.note}</span>
+                          </div>
+                        </div>
+                        <p class="panel-copy">${panel.copy}</p>
+                        ${panel.chart}
+                      </article>
+                    `,
+                  )
+                  .join("")}
+              </div>
+            </section>
           `,
         )
         .join("");
