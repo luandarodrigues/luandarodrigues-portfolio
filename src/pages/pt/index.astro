@@ -109,16 +109,48 @@
 
         const actions = document.createElement('div');
         actions.className = 'card-actions';
+        actions.style.display = 'flex';
+        actions.style.flexDirection = 'row';
+        actions.style.alignItems = 'center';
+        actions.style.justifyContent = 'flex-end';
+        actions.style.gap = '10px';
+        actions.style.flexWrap = 'wrap';
 
         const primary = existing.cloneNode(true);
         primary.className = 'primary';
         primary.textContent = config.primaryLabel;
         primary.href = config.primaryHref || existing.href;
+        primary.style.display = 'inline-flex';
+        primary.style.alignItems = 'center';
+        primary.style.justifyContent = 'center';
+        primary.style.padding = '11px 14px';
+        primary.style.border = '1px solid var(--acid)';
+        primary.style.borderRadius = '999px';
+        primary.style.background = 'var(--acid)';
+        primary.style.color = '#030303';
+        primary.style.textDecoration = 'none';
+        primary.style.font = "800 11px 'IBM Plex Mono', monospace";
+        primary.style.letterSpacing = '.08em';
+        primary.style.textTransform = 'uppercase';
+        primary.style.whiteSpace = 'nowrap';
 
         const secondary = document.createElement('a');
         secondary.className = 'secondary';
         secondary.href = config.secondaryHref || existing.href;
         secondary.textContent = config.secondaryLabel;
+        secondary.style.display = 'inline-flex';
+        secondary.style.alignItems = 'center';
+        secondary.style.justifyContent = 'center';
+        secondary.style.padding = '11px 14px';
+        secondary.style.border = '1px solid var(--line)';
+        secondary.style.borderRadius = '999px';
+        secondary.style.background = 'rgba(255,255,255,.06)';
+        secondary.style.color = 'var(--ink)';
+        secondary.style.textDecoration = 'none';
+        secondary.style.font = "800 11px 'IBM Plex Mono', monospace";
+        secondary.style.letterSpacing = '.08em';
+        secondary.style.textTransform = 'uppercase';
+        secondary.style.whiteSpace = 'nowrap';
 
         [primary, secondary].forEach((link) => {
           if (link.href.startsWith('http')) {
