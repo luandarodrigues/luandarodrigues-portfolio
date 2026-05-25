@@ -379,29 +379,30 @@
     (() => {
       const configs = [
         {
-          primaryLabel: 'Open project ↗',
-          secondaryLabel: 'GitHub ↗',
-          secondaryHref: 'https://github.com/luandarodrigues/luandarodrigues',
+          primaryLabel: 'Open panel ?',
+          primaryHref: 'https://luandarodrigues.github.io/luandarodrigues/dashboards/ubs-healthcare-mapping/',
+          secondaryLabel: 'View project ?',
         },
         {
-          primaryLabel: 'Open panel ↗',
-          secondaryLabel: 'GitHub ↗',
+          primaryLabel: 'Open panel ?',
+          primaryHref: 'https://luandarodrigues-portfolio.vercel.app/workforce-intelligence',
+          secondaryLabel: 'GitHub ?',
           secondaryHref: 'https://github.com/luandarodrigues/workforce-labor-market-intelligence-bi-suite',
         },
         {
-          primaryLabel: 'Open project ↗',
-          secondaryLabel: 'GitHub ↗',
-          secondaryHref: 'https://github.com/luandarodrigues/luandarodrigues',
+          primaryLabel: 'Open panel ?',
+          primaryHref: 'http://luandarodrigues.github.io/heart-disease-risk-prediction/',
+          secondaryLabel: 'View project ?',
         },
         {
-          primaryLabel: 'Open project ↗',
-          secondaryLabel: 'GitHub ↗',
-          secondaryHref: 'https://github.com/luandarodrigues/luandarodrigues',
+          primaryLabel: 'Open panel ?',
+          primaryHref: 'https://luandarodrigues.github.io/olist-delivery-experience-analytics/?v=4',
+          secondaryLabel: 'View project ?',
         },
         {
-          primaryLabel: 'Open project ↗',
-          secondaryLabel: 'GitHub ↗',
-          secondaryHref: 'https://github.com/luandarodrigues/luandarodrigues',
+          primaryLabel: 'Open panel ?',
+          primaryHref: 'https://cinegraph-network-intelligence-lcsr.streamlit.app/',
+          secondaryLabel: 'View project ?',
         },
       ];
 
@@ -417,10 +418,11 @@
         const primary = existing.cloneNode(true);
         primary.className = 'primary';
         primary.textContent = config.primaryLabel;
+        primary.href = config.primaryHref || existing.href;
 
         const secondary = document.createElement('a');
         secondary.className = 'secondary';
-        secondary.href = config.secondaryHref;
+        secondary.href = config.secondaryHref || existing.href;
         secondary.textContent = config.secondaryLabel;
 
         [primary, secondary].forEach((link) => {
@@ -437,3 +439,4 @@
   </script>
 </body>
 </html>
+
