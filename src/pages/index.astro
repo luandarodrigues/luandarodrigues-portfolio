@@ -72,7 +72,7 @@
       position:sticky;
       top:0;
       height:100vh;
-      padding:28px;
+      padding:34px 30px 30px;
       display:flex;
       flex-direction:column;
       justify-content:space-between;
@@ -86,23 +86,23 @@
     .brand strong{display:block;font-size:23px;line-height:1;letter-spacing:-.05em}
     .brand span{display:block;color:var(--soft);font-size:16px;font-weight:300;margin-top:4px}
     .intro-card{
-      margin-top:44px;
-      padding:24px 0 0;
+      margin-top:52px;
+      padding:30px 0 0;
       border-top:1px solid var(--line);
     }
     .intro-card p{
       margin:0;
       color:var(--ink);
-      font-size:24px;
-      line-height:1.12;
+      font-size:22px;
+      line-height:1.18;
       letter-spacing:-.05em;
-      max-width:14ch;
+      max-width:15ch;
     }
     .side-viz{
-      height:260px;
-      margin-top:26px;
+      height:278px;
+      margin-top:34px;
       border:1px solid var(--line);
-      border-radius:30px;
+      border-radius:32px;
       position:relative;
       overflow:hidden;
       background:
@@ -125,13 +125,13 @@
     .links{
       display:grid;
       border-top:1px solid var(--line);
-      margin-top:24px;
+      margin-top:34px;
     }
     .links a{
       display:flex;
       justify-content:space-between;
       align-items:center;
-      padding:14px 4px;
+      padding:16px 4px;
       border-bottom:1px solid var(--line);
       color:var(--soft);
       font-size:13px;
@@ -140,17 +140,21 @@
     }
     .main{padding:26px 38px 110px;min-width:0}
     .topnav{
-      height:60px;
+      min-height:68px;
       display:flex;
       justify-content:flex-end;
       gap:22px;
       align-items:center;
-      border-bottom:1px solid var(--line);
+      padding:14px 22px;
+      margin-top:4px;
+      border:1px solid var(--line);
+      border-radius:24px;
       position:sticky;
-      top:0;
+      top:14px;
       z-index:20;
-      background:linear-gradient(180deg, rgba(6,7,10,.96), rgba(6,7,10,.76));
+      background:linear-gradient(180deg, rgba(7,8,11,.98), rgba(7,8,11,.88));
       backdrop-filter:blur(18px);
+      box-shadow:0 16px 50px rgba(0,0,0,.18);
     }
     .topnav a,
     .eyebrow,
@@ -405,30 +409,42 @@
     .cluster-label--ops{left:52%;bottom:12%;color:var(--ops)}
     .featured{padding:104px 0 44px}
     .featured-shell{
-      padding:26px;
+      padding:34px 34px 36px;
       background:
         linear-gradient(135deg, rgba(20,184,166,.08), rgba(255,255,255,.03)),
         rgba(255,255,255,.02);
     }
     .featured-head{
       display:grid;
-      grid-template-columns:.82fr 1.18fr;
-      gap:24px;
+      grid-template-columns:minmax(0,.78fr) minmax(0,1.22fr);
+      gap:42px;
       align-items:start;
     }
+    .featured-copy{
+      display:grid;
+      gap:18px;
+      align-content:start;
+    }
     .featured-question{
-      margin-top:18px;
+      margin-top:6px;
+      max-width:18ch;
       font-size:25px;
-      line-height:1.35;
+      line-height:1.45;
       letter-spacing:-.04em;
       font-weight:300;
       color:var(--ink);
     }
+    .featured-copy > p:last-of-type{
+      max-width:36ch;
+      font-size:17px;
+      line-height:1.72;
+    }
     .featured-stats{
       display:grid;
-      grid-template-columns:repeat(4,minmax(0,1fr));
-      gap:10px;
-      margin-top:22px;
+      grid-template-columns:repeat(2,minmax(0,1fr));
+      gap:14px;
+      margin-top:12px;
+      max-width:760px;
     }
     .featured-stat,
     .featured-detail article,
@@ -448,12 +464,12 @@
     }
     .featured-stat strong{
       display:block;
-      margin-top:8px;
+      margin-top:10px;
       color:var(--ink);
       font:700 22px 'Space Mono',monospace;
       letter-spacing:.05em;
     }
-    .featured-stat p{margin-top:8px;font-size:13px}
+    .featured-stat p{margin-top:10px;font-size:14px;line-height:1.62}
     .featured-toggle,
     .btn,
     .featured-actions a,
@@ -570,10 +586,10 @@
     .card{
       position:relative;
       display:grid;
-      grid-template-columns:64px minmax(0,1fr) auto;
-      gap:22px;
+      grid-template-columns:74px minmax(0,1fr) minmax(220px,max-content);
+      gap:28px;
       align-items:start;
-      padding:28px 24px 24px 28px;
+      padding:34px 32px 30px 32px;
       background:rgba(255,255,255,.024);
     }
     .card::before{
@@ -605,16 +621,17 @@
     .card h3{
       margin:0 0 12px;
       font-size:clamp(28px,4vw,52px);
-      line-height:.96;
+      line-height:1;
       letter-spacing:-.06em;
       font-weight:300;
+      max-width:16ch;
     }
-    .card p{font-size:16px}
+    .card p{font-size:16px;line-height:1.68}
     .project-meta{
       display:grid;
       grid-template-columns:repeat(3,minmax(0,1fr));
-      gap:10px;
-      margin:18px 0 0;
+      gap:14px;
+      margin:22px 0 0;
     }
     .project-meta strong{
       display:block;
@@ -625,7 +642,7 @@
     }
     .project-meta small{display:block;color:var(--soft);line-height:1.55}
     .meta-line{
-      margin-top:18px;
+      margin-top:22px;
       color:var(--muted);
       font-size:11px;
       letter-spacing:.08em;
@@ -691,17 +708,24 @@
     .contact-layout{
       display:grid;
       grid-template-columns:.9fr 1.1fr;
-      gap:34px;
-      padding-top:26px;
+      gap:42px;
+      padding-top:30px;
       border-top:1px solid var(--line);
+    }
+    form{
+      padding:30px 30px 32px;
     }
     label{
       display:block;
-      margin:0 0 8px;
+      margin:0 0 10px;
       color:var(--muted);
       font-size:11px;
       letter-spacing:.1em;
       text-transform:uppercase;
+    }
+    input:not(:first-of-type),
+    textarea:not(:first-of-type){
+      margin-top:4px;
     }
     input,
     textarea{
@@ -710,11 +734,11 @@
       border-radius:18px;
       background:rgba(255,255,255,.02);
       color:var(--ink);
-      padding:14px 15px;
-      margin-bottom:14px;
+      padding:16px 18px;
+      margin-bottom:18px;
       font:inherit;
     }
-    textarea{min-height:150px;resize:vertical}
+    textarea{min-height:170px;resize:vertical}
     button[type="submit"]{
       cursor:pointer;
       font-size:11px;
@@ -744,23 +768,25 @@
         position:relative;
         height:auto;
         min-height:0;
-        padding:18px;
+        padding:24px 22px 22px;
         border-right:0;
         border-bottom:1px solid var(--line);
       }
       .brand img{width:54px;height:54px;border-radius:16px}
       .brand strong{font-size:21px}
-      .intro-card{margin-top:24px}
-      .intro-card p{max-width:none;font-size:22px}
-      .side-viz{height:170px;border-radius:26px}
-      .links{grid-template-columns:repeat(2,minmax(0,1fr));margin-top:16px}
+      .intro-card{margin-top:28px;padding-top:24px}
+      .intro-card p{max-width:18ch;font-size:20px;line-height:1.2}
+      .side-viz{height:194px;border-radius:28px;margin-top:28px}
+      .links{grid-template-columns:repeat(2,minmax(0,1fr));margin-top:22px}
       .main{padding:0 18px 70px}
       .topnav{
         justify-content:flex-start;
         overflow-x:auto;
         gap:10px;
-        height:auto;
-        padding:12px 0;
+        min-height:0;
+        padding:12px 14px;
+        top:8px;
+        margin-top:8px;
       }
       .topnav::-webkit-scrollbar,
       .tabbar::-webkit-scrollbar{display:none}
@@ -824,8 +850,8 @@
       .summary{padding:20px}
       .card{
         grid-template-columns:1fr;
-        gap:12px;
-        padding:22px;
+        gap:14px;
+        padding:24px 22px 22px;
       }
       .num{font-size:28px}
       .card h3{font-size:32px}
@@ -836,10 +862,11 @@
       .card-actions a{width:max-content}
       .contact{padding-top:76px}
       .contact h2{font-size:clamp(42px,13vw,72px);line-height:.92}
+      form{padding:24px 22px 26px}
     }
     @media (max-width: 520px){
       .main{padding-left:14px;padding-right:14px}
-      .side{padding:16px}
+      .side{padding:22px 18px 18px}
       .links{grid-template-columns:1fr}
       .hero h1{font-size:52px}
       .hero-metric strong{font-size:16px}
@@ -856,6 +883,8 @@
       .featured-copy h2{font-size:40px}
       #methodtab .box{padding:18px 0 20px}
       .card-metric{font-size:15px}
+      .featured-shell{padding:26px 22px 28px}
+      .featured-stats{grid-template-columns:1fr}
     }
   </style>
 </head>
