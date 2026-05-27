@@ -67,12 +67,12 @@
       mix-blend-mode:soft-light;
     }
     a{color:inherit;text-decoration:none}
-    .frame{display:grid;grid-template-columns:minmax(300px,31vw) 1fr;min-height:100vh}
+    .frame{display:grid;grid-template-columns:minmax(310px,28vw) 1fr;min-height:100vh}
     .side{
       position:sticky;
       top:0;
       height:100vh;
-      padding:34px 30px 30px;
+      padding:42px 34px 34px;
       display:flex;
       flex-direction:column;
       justify-content:space-between;
@@ -81,26 +81,26 @@
       background:linear-gradient(180deg, rgba(6,7,10,.94), rgba(6,7,10,.82));
       backdrop-filter:blur(14px);
     }
-    .brand{display:flex;align-items:center;gap:14px}
+    .brand{display:flex;align-items:center;gap:16px}
     .brand img{width:68px;height:68px;border-radius:20px;background:#fff}
-    .brand strong{display:block;font-size:23px;line-height:1;letter-spacing:-.05em}
-    .brand span{display:block;color:var(--soft);font-size:16px;font-weight:300;margin-top:4px}
+    .brand strong{display:block;font-size:21px;line-height:.96;letter-spacing:-.05em}
+    .brand span{display:block;color:var(--soft);font-size:15px;font-weight:300;margin-top:6px}
     .intro-card{
-      margin-top:52px;
+      margin-top:62px;
       padding:30px 0 0;
       border-top:1px solid var(--line);
     }
     .intro-card p{
       margin:0;
       color:var(--ink);
-      font-size:22px;
-      line-height:1.18;
+      font-size:20px;
+      line-height:1.24;
       letter-spacing:-.05em;
-      max-width:15ch;
+      max-width:16ch;
     }
     .side-viz{
-      height:278px;
-      margin-top:34px;
+      height:252px;
+      margin-top:40px;
       border:1px solid var(--line);
       border-radius:32px;
       position:relative;
@@ -125,30 +125,31 @@
     .links{
       display:grid;
       border-top:1px solid var(--line);
-      margin-top:34px;
+      margin-top:40px;
     }
     .links a{
       display:flex;
       justify-content:space-between;
       align-items:center;
-      padding:16px 4px;
+      padding:18px 6px;
       border-bottom:1px solid var(--line);
       color:var(--soft);
       font-size:13px;
       font-weight:500;
       letter-spacing:.02em;
     }
-    .main{padding:26px 38px 110px;min-width:0}
+    .main{padding:22px 42px 110px;min-width:0}
     .topnav{
-      min-height:68px;
+      width:fit-content;
+      min-height:64px;
       display:flex;
       justify-content:flex-end;
       gap:22px;
       align-items:center;
-      padding:14px 22px;
-      margin-top:4px;
+      padding:12px 20px;
+      margin:6px 0 0 auto;
       border:1px solid var(--line);
-      border-radius:24px;
+      border-radius:999px;
       position:sticky;
       top:14px;
       z-index:20;
@@ -409,15 +410,15 @@
     .cluster-label--ops{left:52%;bottom:12%;color:var(--ops)}
     .featured{padding:104px 0 44px}
     .featured-shell{
-      padding:34px 34px 36px;
+      padding:42px 42px 40px;
       background:
         linear-gradient(135deg, rgba(20,184,166,.08), rgba(255,255,255,.03)),
         rgba(255,255,255,.02);
     }
     .featured-head{
       display:grid;
-      grid-template-columns:minmax(0,.78fr) minmax(0,1.22fr);
-      gap:42px;
+      grid-template-columns:minmax(0,.72fr) minmax(0,1.28fr);
+      gap:52px;
       align-items:start;
     }
     .featured-copy{
@@ -427,7 +428,7 @@
     }
     .featured-question{
       margin-top:6px;
-      max-width:18ch;
+      max-width:20ch;
       font-size:25px;
       line-height:1.45;
       letter-spacing:-.04em;
@@ -435,7 +436,7 @@
       color:var(--ink);
     }
     .featured-copy > p:last-of-type{
-      max-width:36ch;
+      max-width:44ch;
       font-size:17px;
       line-height:1.72;
     }
@@ -444,7 +445,7 @@
       grid-template-columns:repeat(2,minmax(0,1fr));
       gap:14px;
       margin-top:12px;
-      max-width:760px;
+      max-width:820px;
     }
     .featured-stat,
     .featured-detail article,
@@ -586,18 +587,18 @@
     .card{
       position:relative;
       display:grid;
-      grid-template-columns:74px minmax(0,1fr) minmax(220px,max-content);
-      gap:28px;
+      grid-template-columns:74px minmax(0,1fr);
+      gap:30px;
       align-items:start;
-      padding:34px 32px 30px 32px;
+      padding:36px 34px 32px 34px;
       background:rgba(255,255,255,.024);
     }
     .card::before{
       content:"";
       position:absolute;
       left:0;
-      top:20px;
-      bottom:20px;
+      top:24px;
+      bottom:24px;
       width:2px;
       border-radius:999px;
     }
@@ -624,7 +625,7 @@
       line-height:1;
       letter-spacing:-.06em;
       font-weight:300;
-      max-width:16ch;
+      max-width:18ch;
     }
     .card p{font-size:16px;line-height:1.68}
     .project-meta{
@@ -653,10 +654,12 @@
       display:flex;
       flex-direction:row;
       align-items:center;
-      justify-content:flex-end;
+      justify-content:flex-start;
       gap:10px;
       flex-wrap:wrap;
       min-width:0;
+      grid-column:2;
+      margin-top:4px;
     }
     .card-actions .secondary{background:rgba(255,255,255,.04)}
     #methodtab .grid,
@@ -708,16 +711,17 @@
     .contact-layout{
       display:grid;
       grid-template-columns:.9fr 1.1fr;
-      gap:42px;
+      gap:52px;
       padding-top:30px;
       border-top:1px solid var(--line);
     }
+    .contact-layout > div:first-child{max-width:34ch}
     form{
       padding:30px 30px 32px;
     }
     label{
       display:block;
-      margin:0 0 10px;
+      margin:8px 0 10px;
       color:var(--muted);
       font-size:11px;
       letter-spacing:.1em;
@@ -768,25 +772,26 @@
         position:relative;
         height:auto;
         min-height:0;
-        padding:24px 22px 22px;
+        padding:28px 24px 24px;
         border-right:0;
         border-bottom:1px solid var(--line);
       }
       .brand img{width:54px;height:54px;border-radius:16px}
       .brand strong{font-size:21px}
-      .intro-card{margin-top:28px;padding-top:24px}
-      .intro-card p{max-width:18ch;font-size:20px;line-height:1.2}
-      .side-viz{height:194px;border-radius:28px;margin-top:28px}
-      .links{grid-template-columns:repeat(2,minmax(0,1fr));margin-top:22px}
+      .intro-card{margin-top:34px;padding-top:24px}
+      .intro-card p{max-width:18ch;font-size:19px;line-height:1.24}
+      .side-viz{height:200px;border-radius:28px;margin-top:30px}
+      .links{grid-template-columns:repeat(2,minmax(0,1fr));margin-top:26px}
       .main{padding:0 18px 70px}
       .topnav{
         justify-content:flex-start;
         overflow-x:auto;
         gap:10px;
         min-height:0;
+        width:100%;
         padding:12px 14px;
         top:8px;
-        margin-top:8px;
+        margin:8px 0 0;
       }
       .topnav::-webkit-scrollbar,
       .tabbar::-webkit-scrollbar{display:none}
@@ -851,13 +856,15 @@
       .card{
         grid-template-columns:1fr;
         gap:14px;
-        padding:24px 22px 22px;
+        padding:26px 22px 24px;
       }
       .num{font-size:28px}
       .card h3{font-size:32px}
       .card-actions{
         align-items:flex-start;
         justify-content:flex-start;
+        grid-column:auto;
+        margin-top:0;
       }
       .card-actions a{width:max-content}
       .contact{padding-top:76px}
@@ -866,7 +873,7 @@
     }
     @media (max-width: 520px){
       .main{padding-left:14px;padding-right:14px}
-      .side{padding:22px 18px 18px}
+      .side{padding:24px 18px 18px}
       .links{grid-template-columns:1fr}
       .hero h1{font-size:52px}
       .hero-metric strong{font-size:16px}
@@ -883,7 +890,7 @@
       .featured-copy h2{font-size:40px}
       #methodtab .box{padding:18px 0 20px}
       .card-metric{font-size:15px}
-      .featured-shell{padding:26px 22px 28px}
+      .featured-shell{padding:28px 20px 30px}
       .featured-stats{grid-template-columns:1fr}
     }
   </style>
