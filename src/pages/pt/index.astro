@@ -417,35 +417,41 @@
     }
     .featured-head{
       display:grid;
-      grid-template-columns:minmax(0,.72fr) minmax(0,1.28fr);
-      gap:52px;
+      grid-template-columns:minmax(280px,.62fr) minmax(0,1.38fr);
+      gap:64px;
       align-items:start;
+    }
+    .featured-head > div:first-child{
+      display:grid;
+      align-content:start;
+      gap:20px;
     }
     .featured-copy{
       display:grid;
-      gap:18px;
+      gap:20px;
       align-content:start;
+      padding-top:54px;
     }
     .featured-question{
-      margin-top:6px;
-      max-width:20ch;
-      font-size:25px;
-      line-height:1.45;
+      margin-top:0;
+      max-width:26ch;
+      font-size:21px;
+      line-height:1.52;
       letter-spacing:-.04em;
       font-weight:300;
       color:var(--ink);
     }
     .featured-copy > p:last-of-type{
-      max-width:44ch;
+      max-width:52ch;
       font-size:17px;
       line-height:1.72;
     }
     .featured-stats{
       display:grid;
       grid-template-columns:repeat(2,minmax(0,1fr));
-      gap:14px;
-      margin-top:12px;
-      max-width:820px;
+      gap:16px;
+      margin-top:8px;
+      max-width:none;
     }
     .featured-stat,
     .featured-detail article,
@@ -643,7 +649,9 @@
     }
     .project-meta small{display:block;color:var(--soft);line-height:1.55}
     .meta-line{
-      margin-top:22px;
+      margin-top:28px;
+      padding-top:18px;
+      border-top:1px solid var(--line);
       color:var(--muted);
       font-size:11px;
       letter-spacing:.08em;
@@ -765,6 +773,7 @@
       .featured-grid{grid-template-columns:1fr}
       .about-text{border-left:0;border-top:1px solid var(--line)}
       .featured-stats{grid-template-columns:repeat(2,minmax(0,1fr))}
+      .featured-copy{padding-top:0}
     }
     @media (max-width: 920px){
       .frame{display:block}
@@ -892,6 +901,7 @@
       .card-metric{font-size:15px}
       .featured-shell{padding:28px 20px 30px}
       .featured-stats{grid-template-columns:1fr}
+      .meta-line{margin-top:24px;padding-top:16px}
     }
   </style>
 </head>
