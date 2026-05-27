@@ -415,34 +415,40 @@
         linear-gradient(135deg, rgba(20,184,166,.08), rgba(255,255,255,.03)),
         rgba(255,255,255,.02);
     }
+    .featured-shell > .eyebrow{
+      margin:0 0 28px;
+      padding-bottom:18px;
+      border-bottom:1px solid var(--line);
+      color:#d7cdbd;
+    }
     .featured-head{
       display:grid;
-      grid-template-columns:minmax(280px,.62fr) minmax(0,1.38fr);
-      gap:64px;
+      grid-template-columns:minmax(320px,.74fr) minmax(0,1.26fr);
+      gap:56px;
       align-items:start;
     }
-    .featured-head > div:first-child{
+    .featured-intro{
       display:grid;
       align-content:start;
-      gap:20px;
+      gap:14px;
     }
     .featured-copy{
       display:grid;
       gap:20px;
       align-content:start;
-      padding-top:54px;
+      padding-top:6px;
     }
     .featured-question{
       margin-top:0;
-      max-width:26ch;
-      font-size:21px;
-      line-height:1.52;
+      max-width:24ch;
+      font-size:30px;
+      line-height:1.28;
       letter-spacing:-.04em;
       font-weight:300;
       color:var(--ink);
     }
     .featured-copy > p:last-of-type{
-      max-width:52ch;
+      max-width:56ch;
       font-size:17px;
       line-height:1.72;
     }
@@ -757,6 +763,20 @@
       letter-spacing:.08em;
       text-transform:uppercase;
     }
+    .submit-btn{
+      width:100%;
+      min-height:56px;
+      margin-top:10px;
+      padding:16px 20px;
+      justify-content:space-between;
+      border-radius:18px;
+      box-shadow:0 18px 42px rgba(0,0,0,.18);
+    }
+    .submit-btn::after{
+      content:"->";
+      font:700 12px 'Space Mono',monospace;
+      letter-spacing:.08em;
+    }
     .row{display:flex;gap:10px;flex-wrap:wrap;margin-top:18px}
     .btn{background:rgba(255,255,255,.03)}
     .reveal{
@@ -896,7 +916,7 @@
       .about h2,
       .cloud-copy h2,
       .title h2,
-      .featured-copy h2{font-size:40px}
+      .featured-question{font-size:25px;max-width:100%}
       #methodtab .box{padding:18px 0 20px}
       .card-metric{font-size:15px}
       .featured-shell{padding:28px 20px 30px}
@@ -1025,9 +1045,9 @@
 
       <section class="featured section" id="featured">
         <div class="featured-shell reveal">
+          <p class="eyebrow">Case em destaque / Health analytics / Benchmark</p>
           <div class="featured-head">
-            <div>
-              <p class="eyebrow">Case em destaque / Health analytics / Benchmark</p>
+            <div class="featured-intro">
               <h2>Dados públicos de saúde conseguem prever diferenças de expectativa de vida?</h2>
             </div>
             <div class="featured-copy">
@@ -1259,7 +1279,7 @@
               <input id="email" type="email" placeholder="voce@email.com" />
               <label for="message">Mensagem</label>
               <textarea id="message" placeholder="Sobre o que você gostaria de conversar?" required></textarea>
-              <button type="submit">Enviar mensagem</button>
+              <button class="submit-btn" type="submit">Enviar mensagem</button>
             </form>
           </div>
         </div>
