@@ -358,11 +358,12 @@ const panelIds: PanelId[] = ['projects', 'methodtab', 'stack', 'background'];
       color:var(--soft);
       line-height:1.68;
     }
-    .cloud-section{height:250vh;position:relative}
+    .cloud-section{height:180vh;position:relative}
     .cloud-pin{
       position:sticky;
-      top:60px;
-      height:calc(100vh - 60px);
+      top:72px;
+      height:min(820px, calc(100vh - 96px));
+      min-height:680px;
       display:grid;
       grid-template-columns:minmax(280px,.58fr) minmax(0,1.42fr);
       gap:42px;
@@ -770,19 +771,24 @@ const panelIds: PanelId[] = ['projects', 'methodtab', 'stack', 'background'];
       .featured-copy > p:last-of-type{max-width:none}
     }
     @media (max-width: 920px){
-      .frame{display:block}
+      .frame{
+        display:flex;
+        flex-direction:column;
+      }
+      .main{order:1;padding:0 18px 72px}
       .side{
+        order:2;
         position:relative;
         height:auto;
         min-height:0;
-        padding:28px 24px 24px;
+        padding:34px 24px 24px;
         border-right:0;
-        border-bottom:1px solid var(--line);
+        border-top:1px solid var(--line);
+        border-bottom:0;
       }
       .side-top{gap:22px}
       .intro-card p{max-width:20ch}
       .side-viz{height:292px}
-      .main{padding:0 18px 72px}
       .topnav{
         justify-content:flex-start;
         overflow-x:auto;
@@ -851,6 +857,15 @@ const panelIds: PanelId[] = ['projects', 'methodtab', 'stack', 'background'];
       }
       .contact{padding-top:76px}
       form{padding:24px 22px 26px}
+      .reveal,
+      .card,
+      .box,
+      .about-card,
+      .featured-shell{
+        opacity:1;
+        transform:none;
+        transition:none;
+      }
     }
     @media (max-width: 720px){
       .main{padding:0 16px 66px}
