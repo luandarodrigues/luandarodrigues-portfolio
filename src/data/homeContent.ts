@@ -243,7 +243,7 @@ export const homeContent: Record<'en' | 'pt', HomeContent> = {
     tabs: {
       sectionEyebrow: 'Selected work',
       title: 'Featured case first, followed by a wider archive of complementary ',
-      accent: 'projects.',
+      accent: 'projects and data products.',
       buttons: [
         { id: 'projects', label: 'Projects' },
         { id: 'methodtab', label: 'Method' },
@@ -251,7 +251,7 @@ export const homeContent: Record<'en' | 'pt', HomeContent> = {
         { id: 'background', label: 'Background' },
       ],
       summaries: {
-        projects: ['Projects', 'The WHO flagship case sits right above. These additional projects show how I work across healthcare, machine learning, SQL, graphs, NLP and decision-focused communication.'],
+        projects: ['Projects', 'The WHO flagship case sits right above. These additional projects show how I work across healthcare, machine learning, SQL, graphs, data products and decision-focused communication.'],
         methodtab: ['Method', 'A practical data workflow: frame the decision, audit the data, build the analytical layer, choose the method and communicate the limits.'],
         stack: ['Stack', 'Tools used across the projects: Python, SQL, Pandas, Power BI, Scikit-learn, NetworkX, NLP and dashboards.'],
         background: ['Background', 'The career layer behind the projects: healthcare, Biomedical Engineering, Hospital Management, EBSERH/HC-UFU and marketing technology.'],
@@ -316,6 +316,23 @@ export const homeContent: Record<'en' | 'pt', HomeContent> = {
       },
       {
         number: '03',
+        metric: 'Lakehouse + app',
+        title: 'Crypto Market Intelligence Lakehouse',
+        summary: 'This platform turns crypto market signals into an analytical product that highlights which assets and narratives deserve attention. I structured public spot, derivatives and on-chain data through a Databricks-oriented bronze-silver-gold flow, then published both a case-study layer and a separate interactive app from the same curated output.',
+        cluster: 'ops',
+        meta: [
+          { label: 'Scope', title: 'Lakehouse + app', text: 'Case-study surface, interactive asset explorer and a public snapshot fed by the same analytical pipeline.' },
+          { label: 'Method', title: 'Python + medallion flow', text: 'Public APIs, bronze-silver-gold layers, feature engineering, export automation and interactive publishing.' },
+          { label: 'Decision value', title: 'Market attention', text: 'Shows where narrative rotation, derivatives positioning and asset-level signals concentrate attention.' },
+        ],
+        metaLine: 'Databricks · Market Intelligence · Crypto Analytics · Data Product',
+        actions: [
+          { label: 'Open panel', href: 'https://crypto-market-intelligence-lakehous.vercel.app', external: true },
+          { label: 'Open repository', href: 'https://github.com/luandarodrigues/crypto-market-intelligence-lakehouse', external: true },
+        ],
+      },
+      {
+        number: '04',
         metric: '918 observations',
         title: 'Heart Disease Risk Prediction',
         summary: 'This model shows how structured clinical variables can support earlier risk interpretation without pretending to automate diagnosis. With 918 observations and 11 predictors, I compared performance across the main validation metrics, framed the model as analytical support for triage, and made the limits explicit so the result stays useful, cautious and clinically interpretable.',
@@ -332,7 +349,7 @@ export const homeContent: Record<'en' | 'pt', HomeContent> = {
         ],
       },
       {
-        number: '04',
+        number: '05',
         metric: '99,441 orders',
         title: 'Brazilian E-Commerce Delivery Experience',
         summary: 'This analysis reveals where logistics friction becomes customer dissatisfaction and which parts of the purchase journey most affect the final experience. Using 99,441 orders plus delivery, freight, seller and review data, I built an operational reading of delays, category behavior and payment patterns so the case supports action on service quality rather than only descriptive reporting.',
@@ -349,7 +366,7 @@ export const homeContent: Record<'en' | 'pt', HomeContent> = {
         ],
       },
       {
-        number: '05',
+        number: '06',
         metric: '22,393 films',
         title: 'CineGraph Network Intelligence',
         summary: 'This project shows how graph structure and text signals can turn entertainment data into recommendation logic, discovery paths and cluster insight. I connected films, series, cast relationships and review language into a single analytical network, then used NetworkX and NLP techniques to expose collaboration patterns, thematic proximity and new ways to interpret recommendation behavior beyond simple metadata matching.',
@@ -495,7 +512,7 @@ export const homeContent: Record<'en' | 'pt', HomeContent> = {
     tabs: {
       sectionEyebrow: 'Trabalhos selecionados',
       title: 'Case principal primeiro, depois um arquivo ampliado de projetos ',
-      accent: 'complementares.',
+      accent: 'complementares e produtos de dados.',
       buttons: [
         { id: 'projects', label: 'Projetos' },
         { id: 'methodtab', label: 'Método' },
@@ -503,7 +520,7 @@ export const homeContent: Record<'en' | 'pt', HomeContent> = {
         { id: 'background', label: 'Background' },
       ],
       summaries: {
-        projects: ['Projetos', 'O case principal da OMS está logo acima. Estes outros projetos mostram como eu trabalho com saúde, machine learning, SQL, grafos, NLP e comunicação orientada à decisão.'],
+        projects: ['Projetos', 'O case principal da OMS está logo acima. Estes outros projetos mostram como eu trabalho com saúde, machine learning, SQL, grafos, produtos de dados e comunicação orientada à decisão.'],
         methodtab: ['Método', 'Um fluxo prático de dados: enquadrar a decisão, auditar os dados, construir a camada analítica, escolher o método e comunicar os limites.'],
         stack: ['Stack', 'Ferramentas usadas ao longo dos projetos: Python, SQL, Pandas, Power BI, Scikit-learn, NetworkX, NLP e dashboards.'],
         background: ['Background', 'A camada de trajetória por trás dos projetos: saúde, Engenharia Biomédica, Gestão Hospitalar, EBSERH/HC-UFU e marketing technology.'],
@@ -568,6 +585,23 @@ export const homeContent: Record<'en' | 'pt', HomeContent> = {
       },
       {
         number: '03',
+        metric: 'Lakehouse + app',
+        title: 'Crypto Market Intelligence Lakehouse',
+        summary: 'Esta plataforma transforma sinais de mercado cripto em um produto analítico que destaca quais ativos e narrativas merecem atenção. Estruturei dados públicos de spot, derivativos e on-chain em um fluxo bronze-silver-gold orientado a Databricks, e depois publiquei tanto uma camada de case study quanto um app interativo separado a partir do mesmo output curado.',
+        cluster: 'ops',
+        meta: [
+          { label: 'Escopo', title: 'Lakehouse + app', text: 'Camada de case study, asset explorer interativo e snapshot público alimentado pelo mesmo pipeline analítico.' },
+          { label: 'Método', title: 'Python + fluxo medallion', text: 'APIs públicas, camadas bronze-silver-gold, feature engineering, automação de export e publicação interativa.' },
+          { label: 'Valor decisório', title: 'Atenção de mercado', text: 'Mostra onde rotação de narrativas, posicionamento em derivativos e sinais por ativo concentram atenção.' },
+        ],
+        metaLine: 'Databricks · Market Intelligence · Crypto Analytics · Data Product',
+        actions: [
+          { label: 'Abrir painel', href: 'https://crypto-market-intelligence-lakehous.vercel.app/?lang=pt-BR', external: true },
+          { label: 'Abrir repositório', href: 'https://github.com/luandarodrigues/crypto-market-intelligence-lakehouse', external: true },
+        ],
+      },
+      {
+        number: '04',
         metric: '918 observações',
         title: 'Predição de Risco de Doença Cardíaca',
         summary: 'Este modelo mostra como variáveis clínicas estruturadas podem apoiar interpretação precoce de risco sem fingir automatizar diagnóstico. Com 918 observações e 11 preditores, comparei desempenho nas principais métricas de validação, enquadrei o modelo como suporte analítico para triagem e deixei os limites explícitos para que o resultado permaneça útil, cauteloso e clinicamente interpretável.',
@@ -584,7 +618,7 @@ export const homeContent: Record<'en' | 'pt', HomeContent> = {
         ],
       },
       {
-        number: '04',
+        number: '05',
         metric: '99.441 pedidos',
         title: 'Experiência de Entrega no E-Commerce Brasileiro',
         summary: 'Esta análise revela onde o atrito logístico se transforma em insatisfação do cliente e quais partes da jornada de compra mais afetam a experiência final. Com 99.441 pedidos e dados de entrega, frete, sellers e reviews, construí uma leitura operacional de atrasos, comportamento por categoria e padrões de pagamento para apoiar ação sobre qualidade de serviço, e não apenas reporte descritivo.',
@@ -601,7 +635,7 @@ export const homeContent: Record<'en' | 'pt', HomeContent> = {
         ],
       },
       {
-        number: '05',
+        number: '06',
         metric: '22.393 filmes',
         title: 'CineGraph Network Intelligence',
         summary: 'Este projeto mostra como estrutura de grafo e sinais de texto podem transformar dados de entretenimento em lógica de recomendação, caminhos de descoberta e leitura de clusters. Conectei filmes, séries, relações de elenco e linguagem de reviews em uma única rede analítica, depois usei NetworkX e técnicas de NLP para expor padrões de colaboração, proximidade temática e novas formas de interpretar recomendação além do matching simples por metadados.',
